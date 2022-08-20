@@ -4,17 +4,17 @@
 
 const loginForm = document.querySelector(".login-form");
 const loginInput = document.querySelector(".login-form input");
+const greeting = document.querySelector("#greeting");
+
+const HIDDEN_CLASSNAME = "hidden";
 
 const onLoginSubmit = (event) => {
-  // const username = loginInput.value;
-  //   if (username === "") {
-  //     alert("Please write your name.");
-  //   } else if (username.length > 15) {
-  //     alert("Your name is too long.");
-  //   }
-
   event.preventDefault();
-  console.log(loginInput.value);
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  const username = loginInput.value;
+  console.log(username);
+  greeting.innerText = `Hello ${username}!`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
 };
 
 loginForm.addEventListener("submit", onLoginSubmit);
