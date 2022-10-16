@@ -4,6 +4,8 @@ const chosenImage = iamges[Math.floor(Math.random() * iamges.length)];
 
 const bgImage = document.createElement("img");
 
+const wrapEl = document.querySelector("#wrap");
+
 bgImage.src = `img/${chosenImage}`;
 
 document.body.prepend(bgImage);
